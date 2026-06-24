@@ -2,6 +2,8 @@
 #include <stdio.h>
 
 int main(int argc, char **argv) {
-  waitForinput();
+  while(1){
+    waitForinput();
+  }
   return 0;
 }

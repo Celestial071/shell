@@ -1,6 +1,6 @@
 CC = clang -std=c17
 
-SRC = main.c inputHandler.c parser.c
+SRC = main.c inputHandler.c parser.c execute.c
 
 all:
 	$(CC) $(SRC) -o main

@@ -1,6 +1,6 @@
 #include "include/parser.h"
 #include <stdio.h>
-
+#include "include/execute.h"
 void addToken(TokenArray *arr, Token t) {
   if(arr->size >= arr->capacity) {
     size_t tempCapacity = 2 * arr->capacity;
@@ -165,7 +165,10 @@ void CreateCommandsFromToken(TokenArray *token) {
     }
   }
   addCommand(&commands, cur);
-  printCommandArray(&commands);
+  //printCommandArray(&commands);
+  //execute command array lol.
+  for(size_t i = 0 ; i < commands.size; i++) {
+    executeCommands(commands.data[i].argv);
+  }
   freeCommandArray(&commands);
-  
 }
