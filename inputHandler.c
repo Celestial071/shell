@@ -1,6 +1,6 @@
 #include "include/inputHandler.h"
 #include "include/parser.h"
-
+#include "include/colors.h"
 
 void waitForinput(void) {
   readLine();
@@ -14,7 +14,7 @@ void readLine(void){
   char *inpString = malloc(sizeof(char) * 128);
   char c;
   
-  printf("cShell/ ");
+  pGreen("cShell/$ ");
   fflush(stdout);
   while((c = getchar()) != EOF) {
     if(c == '\n') break;

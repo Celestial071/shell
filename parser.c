@@ -165,7 +165,7 @@ void CreateCommandsFromToken(TokenArray *token) {
     }
   }
   addCommand(&commands, cur);
-  //printCommandArray(&commands);
+  printCommandArray(&commands);
   //execute command array lol.
   for(size_t i = 0 ; i < commands.size; i++) {
     executeCommands(commands.data[i].argv);
