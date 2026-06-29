@@ -16,6 +16,8 @@ void executeCommands(char **argv) {
   if(is_builtin(argv[0])) {
     if(strcmp(argv[0], "cd") == 0){
       builtin_cd(argv);
+    } else if(strcmp(argv[0], "exit") == 0) {
+      exit(0);
     }
 
   }else{ 
