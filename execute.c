@@ -1,5 +1,5 @@
 #include "include/execute.h"
-
+#include "unistd.h"
 
 int is_builtin(char *cmd) {
 
@@ -18,6 +18,8 @@ void executeCommands(char **argv) {
       builtin_cd(argv);
     } else if(strcmp(argv[0], "exit") == 0) {
       exit(0);
+    } else if(strcmp(argv[0], "pwd") == 0) {
+      builtin_pwd(argv);
     }
 
   }else{ 
@@ -50,6 +52,21 @@ int builtin_cd(char **argv) {
     perror("cd");
     return 1;
   }
+
+  return 0;
+}
+
+int builtin_pwd(char **argv) {
+  (void)argv; //supress unused parameter for now
+
+  char *cwd = getcwd(NULL, 0);
+  if(cwd == NULL) {
+    perror("pwd error");
+    return 1;
+  }
+
+  printf("%s\n", cwd);
+  free(cwd);
 
   return 0;
 }

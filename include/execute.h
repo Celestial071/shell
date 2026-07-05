@@ -11,5 +11,6 @@ int is_builtin(char *cmd);
 void executeCommands(char **argv);
 
 int builtin_cd(char **argv);
+int builtin_pwd(char **argv);
 
 #endif //EXecute_H
